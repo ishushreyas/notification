@@ -35,8 +35,14 @@
     measurementId: "G-C64NWHRT0Y"
 
   };
+import { getMessaging, getToken } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-messaging.js";
+
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
+const db = getFirestore();
+
+const messaging = getMessaging(app);
   
   
+  </script>
