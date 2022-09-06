@@ -42,7 +42,39 @@ import { getMessaging, getToken } from "https://www.gstatic.com/firebasejs/9.9.3
   const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 
-const messaging = getMessaging(app);
+const messaging = firebase.messaging();
+
+ messaging.requestPermission()
+
+     .then(function () {
+
+         alert('have permission');
+
+         return messaging.getToken();
+
+         console.log(messaging.getToken());
+
+     })
+
+     .then(function (token) {
+
+         newToken = token
+         document.getElementById("token").textContent = newToken; 
+         console.log(newToken);
+
+     })
+
+     .catch(function (err) {
+
+         alert(err);
+
+     })
+
+ messaging.onMessage(function (payload) {
+
+     alert('onMessage: ', payload)
+
+ })
   
   
   </script>
