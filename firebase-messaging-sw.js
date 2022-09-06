@@ -36,7 +36,7 @@ const messaging = getMessaging(firebaseApp);
 
   onMessage(messaging, (payload) => {
 
-  console.log('Message received. ', payload);
+  alert('Message received. ' + payload);
 
   // ...
 
@@ -44,7 +44,7 @@ const messaging = getMessaging(firebaseApp);
 
 onBackgroundMessage(messaging, (payload) => {
 
-  console.log('[firebase-messaging-sw.js] Received background message ', payload);
+  alert('[firebase-messaging-sw.js] Received background message ' + payload);
 
   // Customize notification here
 
