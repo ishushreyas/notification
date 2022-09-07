@@ -12,19 +12,20 @@ import { onMessage } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-mes
 
 const firebaseApp = initializeApp({
 
-  apiKey: "AIzaSyAN-X9u7n7QnM8RLrVV4YnXq2MmVz6WNfw",
+  apiKey: "AIzaSyBVrRabMjHB6JSWoIxpgDp6Wnn1_eryP6g",
 
-    authDomain: "em-issyoo.firebaseapp.com",
+    authDomain: "chat-9a308.firebaseapp.com",
 
-    projectId: "em-issyoo",
+    projectId: "chat-9a308",
 
-    storageBucket: "em-issyoo.appspot.com",
+    storageBucket: "chat-9a308.appspot.com",
 
-    messagingSenderId: "33480809995",
+    messagingSenderId: "425014899154",
 
-    appId: "1:33480809995:web:74df1e056f7638d0b5310e",
+    appId: "1:425014899154:web:be7fb6b68d239647e2180b",
 
-    measurementId: "G-C64NWHRT0Y"
+    measurementId: "G-334Y4TXNJD"
+
 
 });
 
