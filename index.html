@@ -115,62 +115,15 @@ async function saveMessagingDeviceToken() {
   
   
   
+ 
 
-//messaging.getToken({vapidKey: "BBS9RCRYHAlts9o3_n32hs1rdjY7k5mc8-FR7Tz05dSm3uULC8amdtyup3d2L_kQ-DX20sdH3dpAdvCyV9swjz0"});
-  function requestPermission() {
+  
 
-  console.log('Requesting permission...');
 
-  Notification.requestPermission().then((permission) => {
 
-    if (permission === 'granted') {
 
-      console.log('Notification permission granted.');
 
-      alert('have permission');
 
-         getToken(messaging, { vapidKey: 'BBS9RCRYHAlts9o3_n32hs1rdjY7k5mc8-FR7Tz05dSm3uULC8amdtyup3d2L_kQ-DX20sdH3dpAdvCyV9swjz0' }).then((currentToken) => {
-
-  if (currentToken) {
-
-    // Send the token to your server and update the UI if necessary
-
-    // ...
-    document.getElementById("token").textContent= currentToken;
-
-  } else {
-
-    // Show permission request UI
-
-    alert('No registration token available. Request permission to generate one.');
-
-    // ...
-
-  }
-
-}).catch((err) => {
-
-  alert('An error occurred while retrieving token. ' + err);
-
-  // ...
-
-});
-
-}
-
-else{
-
-  alert("no prmsn");
-
-}
-
-})}
-
-requestPermission();
-
-    
-
-    </script>
 
     
   
