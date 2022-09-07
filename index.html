@@ -73,7 +73,7 @@ async function saveMessagingDeviceToken() {
 
     if (currentToken) {
 
-      console.log('Got FCM device token:', currentToken);
+      alert('Got FCM device token:'+ currentToken);
 
       // Saving the Device Token to Cloud Firestore.
 
@@ -87,9 +87,9 @@ async function saveMessagingDeviceToken() {
 
       onMessage(getMessaging(), (message) => {
 
-        console.log(
+        alert(
 
-          'New foreground notification from Firebase Messaging!',
+          'New foreground notification from Firebase Messaging!'+
 
           message.notification
 
@@ -107,7 +107,7 @@ async function saveMessagingDeviceToken() {
 
   } catch(error) {
 
-    console.error('Unable to get messaging token.', error);
+    alert('Unable to get messaging token.'+ error);
 
   };
 
