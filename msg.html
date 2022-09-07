@@ -80,16 +80,10 @@ async function saveMessagingDeviceToken() {
 
     // Add the public key generated from the console here.
 
-if ("serviceWorker" in navigator) {
 
-navigator.serviceWorker
-
-  .register("/firebase-messaging-sw.js")
-
-  .then(function(registration) {
-
-    console.log("Registration successful, scope is:", registration.scope);
-
+  
+  
+    
 getToken(messaging, { vapidKey: 'BLPsDppHj08emyWcYdZsRLgUcy9I-zxodtjMvFgiH7QIS9K04M01b_5RpIoV3J77Ko7VXo7EvuSi8jJOf_m8KrA' }).then((currentToken) => {
 
     if (currentToken) {
@@ -126,7 +120,7 @@ getToken(messaging, { vapidKey: 'BLPsDppHj08emyWcYdZsRLgUcy9I-zxodtjMvFgiH7QIS9K
 
     }
 
-  }) })} 
+  }) })
 
   
 
