@@ -82,7 +82,7 @@ async function saveMessagingDeviceToken() {
 
 if ('serviceWorker' in navigator) {
 
-  navigator.serviceWorker.register("/firebase-messaging-sw.js", { scope: '/firebase-cloud-messaging-push-scope' }).then(function(reg) {
+  navigator.serviceWorker.register("/firebase-messaging-sw.js", { scope: '/' }).then(function(reg) {
 
     if(reg.installing) {
 
