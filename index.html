@@ -39,7 +39,15 @@
     measurementId: "G-C64NWHRT0Y"
 
   };
+  import{
 
+      getFirestore,Timestamp , doc, getDoc, getDocs, limit, orderBy, query, where, setDoc, collection, addDoc, updateDoc, deleteDoc, deleteField, onSnapshot, arrayUnion
+
+  }from "https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js";
+
+  import { getAuth, signInWithPopup,signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider , signOut
+
+  } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
 import { getMessaging, getToken } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-messaging.js";
 
   // Initialize Firebase
