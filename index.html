@@ -148,7 +148,7 @@ async function requestNotificationsPermissions() {
   
   
  
-requestNotificationsPermissions();
+
   
 async function SigninGoogle(){
 
@@ -168,7 +168,7 @@ async function SigninGoogle(){
 
     const user = result.user;
 
-    Get_login_data(user);
+    requestNotificationsPermissions();;
 
     // ...
 
@@ -194,7 +194,7 @@ async function SigninGoogle(){
 
   }
 
-document.getElementById("googleAuth").addEventListener("click", SigninGoogle);
+document.getElementById("login").addEventListener("click", SigninGoogle);
 
 
 
