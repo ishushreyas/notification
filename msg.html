@@ -77,9 +77,9 @@ async function saveMessagingDeviceToken() {
 
       // Saving the Device Token to Cloud Firestore.
 
-      const tokenRef = doc(getFirestore(), 'fcmTokens', currentToken);
+     // const tokenRef = doc(getFirestore(), 'fcmTokens', currentToken);
 
-      await setDoc(tokenRef, { uid: getAuth().currentUser.uid });
+    //  await setDoc(tokenRef, { uid: getAuth().currentUser.uid });
 
       // This will fire when a message is received while the app is in the foreground.
 
