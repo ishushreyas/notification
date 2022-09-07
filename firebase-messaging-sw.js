@@ -42,9 +42,12 @@ const messaging = getMessaging(firebaseApp);
 
 });
 
-onBackgroundMessage(messaging, (payload) => {
 
-  alert('[firebase-messaging-sw.js] Received background message ' + payload);
+
+
+messaging.setBackgroundMessageHandler(function(payload) {
+
+  console.log('[firebase-messaging-sw.js] Received background message ', payload);
 
   // Customize notification here
 
@@ -52,15 +55,12 @@ onBackgroundMessage(messaging, (payload) => {
 
   const notificationOptions = {
 
-    body: 'Background Message body.',
-
-    icon: '/firebase-logo.png'
+    body: 'Background Message body.'
 
   };
 
-  self.registration.showNotification(notificationTitle,
+  return self.registration.showNotification(notificationTitle,
 
-    notificationOptions);
+      notificationOptions);
 
 });
-
