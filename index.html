@@ -48,6 +48,73 @@ import { getMessaging, getToken } from "https://www.gstatic.com/firebasejs/9.9.3
 
 const messaging = getMessaging(app);
 // Add the public key generated from the console here.
+  
+  
+  
+  
+  
+  
+  
+  // Saves the messaging device token to Cloud Firestore.
+
+async function saveMessagingDeviceToken() {
+
+  try {
+
+    const currentToken = await getToken(getMessaging());
+
+    if (currentToken) {
+
+      console.log('Got FCM device token:', currentToken);
+
+      // Saving the Device Token to Cloud Firestore.
+
+      const tokenRef = doc(getFirestore(), 'fcmTokens', currentToken);
+
+      await setDoc(tokenRef, { uid: getAuth().currentUser.uid });
+
+      // This will fire when a message is received while the app is in the foreground.
+
+      // When the app is in the background, firebase-messaging-sw.js will receive the message instead.
+
+      onMessage(getMessaging(), (message) => {
+
+        console.log(
+
+          'New foreground notification from Firebase Messaging!',
+
+          message.notification
+
+        );
+
+      });
+
+    } else {
+
+      // Need to request permissions to show notifications.
+
+      requestNotificationsPermissions();
+
+    }
+
+  } catch(error) {
+
+    console.error('Unable to get messaging token.', error);
+
+  };
+
+}
+
+  
+
+
+  
+  
+  
+  
+  
+  
+  
 
 //messaging.getToken({vapidKey: "BBS9RCRYHAlts9o3_n32hs1rdjY7k5mc8-FR7Tz05dSm3uULC8amdtyup3d2L_kQ-DX20sdH3dpAdvCyV9swjz0"});
   function requestPermission() {
